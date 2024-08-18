@@ -6,6 +6,10 @@
   "scripts": {
     "build": "babel src --out-dir lib"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/xz333221/zendash"
+  },
   "keywords": [],
   "author": "xuze <569552263@qq.com>",
   "license": "MIT",
