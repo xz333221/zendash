@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Debounce Example</title>
+</head>
+<body>
+<h1>Search Example with Debounce</h1>
+<input type="text" id="search-input" placeholder="Type to search...">
+<p id="result"></p>
+
+<script type="module">
+  import { debounce } from '../index.js';
+
+  // 模拟搜索操作
+  function performSearch(query) {
+    document.getElementById('result').textContent = `Searching for: ${query}`;
+  }
+
+  // 绑定防抖后的搜索函数到输入框的事件
+  const searchInput = document.getElementById('search-input');
+  const debouncedSearch = debounce(function() {
+    performSearch(searchInput.value);
+  }, 300);  // 300ms 的防抖延迟
+
+  searchInput.addEventListener('input', debouncedSearch);
+</script>
+</body>
+</html>

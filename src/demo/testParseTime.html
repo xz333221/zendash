@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Parse Time Function Test</title>
+</head>
+<body>
+<h1>Parse Time Function Test</h1>
+<div>
+  <p><strong>Current Local Time:</strong> <span id="current-local-time"></span></p>
+  <p><strong>Current UTC Time:</strong> <span id="current-utc-time"></span></p>
+  <p><strong>Parsed Time (Timestamp, Local):</strong> <span id="timestamp-local-time"></span></p>
+  <p><strong>Parsed Time (Timestamp, UTC):</strong> <span id="timestamp-utc-time"></span></p>
+</div>
+
+<script type="module">
+  // Import the parseTime function
+  import { parseTime } from '../index.js';  // Replace with the correct path to your JS file
+
+  // Test the function with various inputs
+  document.getElementById('current-local-time').innerText = parseTime(null, '{y}-{m}-{d} {h}:{i}:{s}', true); // Local time
+  document.getElementById('current-utc-time').innerText = parseTime(null, '{y}-{m}-{d} {h}:{i}:{s}', false); // UTC time
+  document.getElementById('timestamp-local-time').innerText = parseTime(1627891234, '{y}-{m}-{d} {h}:{i}:{s}', true); // Unix timestamp, Local
+  document.getElementById('timestamp-utc-time').innerText = parseTime(1627891234, '{y}-{m}-{d} {h}:{i}:{s}', false); // Unix timestamp, UTC
+
+  // Additional cases in the console
+  console.log(parseTime('2024-08-31T14:20:30', '{y}-{m}-{d} {h}:{i}:{s}', true));  // Local time
+  console.log(parseTime('2024-08-31T14:20:30', '{y}-{m}-{d} {h}:{i}:{s}', false)); // UTC time
+  console.log(parseTime('2024-08-31', '{y}-{m}-{d} {h}:{i}:{s}', false)); // UTC time
+</script>
+</body>
+</html>
