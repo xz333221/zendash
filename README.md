@@ -1,7 +1,3 @@
-根据你的代码和函数的描述，这里是修改后的 README 文档：
-
----
-
 # zendash
 
 A library of common tool methods, including functions for generating random IDs, creating debounced functions, and formatting dates and times.

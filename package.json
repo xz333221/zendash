@@ -1,10 +1,12 @@
 {
   "name": "zendash",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "A library of common tool methods",
   "main": "lib/index.js",
   "scripts": {
-    "build": "babel src/index.js --out-dir lib"
+    "build": "babel src/index.js --out-dir lib && terser lib/index.js --compress --mangle --output lib/index.js",
+    "build-nocompress": "babel src/index.js --out-dir lib",
+    "terser": "terser lib/index.js --compress --mangle --output lib/index.js"
   },
   "repository": {
     "type": "git",
@@ -14,8 +16,9 @@
   "author": "xuze <569552263@qq.com>",
   "license": "MIT",
   "devDependencies": {
-    "@babel/cli": "^7.24.8",
+    "@babel/cli": "^7.25.6",
     "@babel/core": "^7.25.2",
-    "@babel/preset-env": "^7.25.3"
+    "@babel/preset-env": "^7.25.4",
+    "terser": "^5.31.6"
   }
 }
