@@ -7,9 +7,11 @@
     "lib/index.js"
   ],
   "scripts": {
-    "publish": "babel src/index.js --out-dir lib && terser lib/index.js --compress --mangle --output lib/index.js && npm publish",
+    "publish": "babel src/index.js --out-dir lib && terser lib/index.js --compress --mangle --output lib/index.js && nrm use npm && npm publish",
     "build": "babel src/index.js --out-dir lib && terser lib/index.js --compress --mangle --output lib/index.js",
     "build-nocompress": "babel src/index.js --out-dir lib",
+    "change-npm": "nrm use npm",
+    "clean-npm-proxy": "npm config delete proxy && npm config delete https-proxy",
     "terser": "terser lib/index.js --compress --mangle --output lib/index.js"
   },
   "repository": {
