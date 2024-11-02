@@ -91,5 +91,3 @@ Formats the provided time into a specified date format (without time).
 - **Returns**: A formatted date string.
 
 ---
-
-This README now includes descriptions and usage examples for each function in your library, making it easier for users to understand how to use them effectively.
